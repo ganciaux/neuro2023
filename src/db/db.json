@@ -1,0 +1,13 @@
+{
+    "clients": [
+      { "id": 1, "nom": "Client 1", "email": "client1@example.com" },
+      { "id": 2, "nom": "Client 2", "email": "client2@example.com" }
+    ],
+    "articles": [
+      { "id": 1, "nom": "Article 1", "prix": 10.99 },
+      { "id": 2, "nom": "Article 2", "prix": 19.99 }
+    ],
+    "factures": [],
+    "rendez-vous": [],
+    "paiements": []
+  }
