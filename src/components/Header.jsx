@@ -12,7 +12,8 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
-const pages = [{ label:"Clients", link:"/"}, { label:"Rendez-vous", link:"/"}, { label:"Articles", link:"/"}, { label:"Factures", link:"/"}, { label:"Paiments", link:"/"}];
+import { Link } from "react-router-dom";
+const pages = [{ label:"Clients", link:"/clients"}, { label:"Rendez-vous", link:"/rendez-vous"}, { label:"Articles", link:"/articles"}, { label:"Factures", link:"/factures"}, { label:"Paiments", link:"/paiments"}];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 export function Header() {
@@ -87,9 +88,11 @@ export function Header() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                <Link to={page.link} key={page.label} style={{textDecoration: 'none', color:'black'}}>
+                <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page.label}</Typography>
-                </MenuItem>
+                  </MenuItem>
+                  </Link>
               ))}
             </Menu>
           </Box>
@@ -114,13 +117,16 @@ export function Header() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
+              <Link to={page.link} key={page.label} style={{textDecoration: 'none'}}>
               <Button
-                key={page.label}
+                
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page.label}
+                
               </Button>
+                </Link>
             ))}
           </Box>
 

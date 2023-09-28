@@ -4,11 +4,13 @@ import { Outlet, Link } from "react-router-dom";
 
 export function Navigation() {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{paddingTop:"35px"}}>
+      {/*
       <Link to="/">Home</Link>
       <Link to="/clients">Clients</Link>
       <Link to="/articles">Article</Link>
-      <Outlet />
+      
+  */ <Outlet />}
     </Container>
   );
 }
